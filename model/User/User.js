@@ -65,4 +65,11 @@ const userShema = new mongoose.Schema({
             ref: "Post"
         }
     ],
-})
+},{
+    timestamps: true,
+});
+
+//Compile the user modal
+const User = mongoose.model("User", userShema);
+
+module.exports = User;
