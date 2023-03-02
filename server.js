@@ -12,7 +12,7 @@ const app = express()
 //users route
 
 //POST/api/v1/users/register
-app.post('/api/v1/user/register', async()=> {
+app.post('/api/v1/users/register', async(req, res)=> {
     try {
         res.json({
            status: 'success',
@@ -24,7 +24,7 @@ app.post('/api/v1/user/register', async()=> {
 })
 
 //POST/api/v1/users/login
-app.post('/api/v1/user/login', async()=> {
+app.post('/api/v1/users/login', async(req, res)=> {
     try {
         res.json({
            status: 'success',
@@ -36,7 +36,7 @@ app.post('/api/v1/user/login', async()=> {
 })
 
 //GET/api/v1/users/:id
-app.get('/api/v1/users/profile/:id', async()=> {
+app.get('/api/v1/users/profile/:id', async(req, res)=> {
     try {
         res.json({
            status: 'success',
@@ -60,7 +60,7 @@ app.get('/api/v1/users', async()=> {
 })
 
 //DELETE/api/v1/users/:id
-app.delete('/api/v1/users/:id', async()=> {
+app.delete('/api/v1/users/:id', async(req, res)=> {
     try {
         res.json({
            status: 'success',
@@ -72,7 +72,7 @@ app.delete('/api/v1/users/:id', async()=> {
 })
 
 //PUT/api/v1/users/:id
-app.put('/api/v1/users/:id', async()=> {
+app.put('/api/v1/users/:id', async(req, res)=> {
     try {
         res.json({
            status: 'success',
@@ -88,7 +88,7 @@ app.put('/api/v1/users/:id', async()=> {
 //-----------
 
 //POST/api/v1/posts
-app.post('/api/v1/posts', async()=> {
+app.post('/api/v1/posts', async(req, res)=> {
     try {
         res.json({
            status: 'success',
@@ -100,7 +100,7 @@ app.post('/api/v1/posts', async()=> {
 })
 
 //GET/api/v1/users/:id
-app.get('/api/v1/posts/:id', async()=> {
+app.get('/api/v1/posts/:id', async(req, res)=> {
     try {
         res.json({
            status: 'success',
@@ -112,7 +112,7 @@ app.get('/api/v1/posts/:id', async()=> {
 })
 
 //Get/api/v1/posts
-app.get('/api/v1/posts', async()=> {
+app.get('/api/v1/posts', async(req, res)=> {
     try {
         res.json({
            status: 'success',
@@ -124,7 +124,7 @@ app.get('/api/v1/posts', async()=> {
 })
 
 //DELETE/api/v1/posts/:id
-app.delete('/api/v1/posts/:id', async()=> {
+app.delete('/api/v1/posts/:id', async(req, res)=> {
     try {
         res.json({
            status: 'success',
@@ -136,11 +136,11 @@ app.delete('/api/v1/posts/:id', async()=> {
 })
 
 //PUT/api/v1/posts/:id
-app.put('/api/v1/posts/:id', async()=> {
+app.put('/api/v1/posts/:id', async(req, res)=> {
     try {
         res.json({
            status: 'success',
-           data: 'post user route' 
+           data: 'update post route' 
         })
     } catch(error) {
         res.json(error.message)
@@ -151,7 +151,7 @@ app.put('/api/v1/posts/:id', async()=> {
 //comments route
 //--------------
 //POST/api/v1/comments
-app.post('/api/v1/comments', async()=> {
+app.post('/api/v1/comments', async(req, res)=> {
     try {
         res.json({
            status: 'success',
@@ -163,7 +163,7 @@ app.post('/api/v1/comments', async()=> {
 })
 
 //GET/api/v1/comments/:id
-app.get('/api/v1/comments/:id', async()=> {
+app.get('/api/v1/comments/:id', async(req, res)=> {
     try {
         res.json({
            status: 'success',
@@ -175,7 +175,7 @@ app.get('/api/v1/comments/:id', async()=> {
 })
 
 //DELETE/api/v1/comments/:id
-app.delete('/api/v1/comments/:id', async()=> {
+app.delete('/api/v1/comments/:id', async(req, res)=> {
     try {
         res.json({
            status: 'success',
@@ -187,11 +187,11 @@ app.delete('/api/v1/comments/:id', async()=> {
 })
 
 //PUT/api/v1/comments/:id
-app.put('/api/v1/comments/:id', async()=> {
+app.put('/api/v1/comments/:id', async(req, res)=> {
     try {
         res.json({
            status: 'success',
-           data: 'post comment route' 
+           data: 'update comment route' 
         })
     } catch(error) {
         res.json(error.message)
@@ -203,7 +203,7 @@ app.put('/api/v1/comments/:id', async()=> {
 //-----------
 
 //POST/api/v1/categories
-app.post('/api/v1/categories', async()=> {
+app.post('/api/v1/categories', async(req, res)=> {
     try {
         res.json({
            status: 'success',
@@ -215,7 +215,7 @@ app.post('/api/v1/categories', async()=> {
 })
 
 //GET/api/v1/categories/:id
-app.get('/api/v1/categories/:id', async()=> {
+app.get('/api/v1/categories/:id', async(req, res)=> {
     try {
         res.json({
            status: 'success',
@@ -227,7 +227,7 @@ app.get('/api/v1/categories/:id', async()=> {
 })
 
 //DELETE/api/v1/categories/:id
-app.delete('/api/v1/categories/:id', async()=> {
+app.delete('/api/v1/categories/:id', async(req, res)=> {
     try {
         res.json({
            status: 'success',
@@ -239,11 +239,11 @@ app.delete('/api/v1/categories/:id', async()=> {
 })
 
 //PUT/api/v1/categories/:id
-app.put('/api/v1/categories/:id', async()=> {
+app.put('/api/v1/categories/:id', async(req, res)=> {
     try {
         res.json({
            status: 'success',
-           data: 'post category route' 
+           data: 'update category route' 
         })
     } catch(error) {
         res.json(error.message)
