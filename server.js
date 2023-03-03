@@ -10,6 +10,8 @@ const app = express()
 //console.log(app)
 
 //middlewares
+app.use(express.json()) //pass incoming payload
+
 //routes
 //----
 //users route
