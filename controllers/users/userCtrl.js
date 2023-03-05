@@ -77,10 +77,12 @@ const usersCtrl = async(req, res)=> {
 
 //profile
 const userProfileCtrl = async(req, res)=> {
+    const { id } = req.params;
     try {
+        const  user = await User.findById(id);
         res.json({
            status: 'success',
-           data: 'Porfile route' 
+           data: user, 
         })
     } catch(error) {
         res.json(error.message)
