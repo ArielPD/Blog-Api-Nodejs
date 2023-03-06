@@ -4,15 +4,16 @@ const generateToken = require("../../utils/generateToken");
 const getTokenFromHeader = require("../../utils/getTokenFromHeader")
 
 //Register
-const userRegisterCtrl = async(req, res)=> {
+const userRegisterCtrl = async(req, res, next)=> {
     const {firstname, lastname, profilePhoto, email, password} = req.body;
     try {
         //Check if email exist
         const userFound = await User.findOne({email});
         if(userFound) {
-            return res.json({
+            /*return res.json({
                 msg: 'User Already Exist'
-            })
+            })*/
+            return next(new Error("User Already Exist"))
         }
         //hash password
         const salt = await bcrypt.genSalt(10);
@@ -31,7 +32,9 @@ const userRegisterCtrl = async(req, res)=> {
            data: user
         })
     } catch(error) {
-        res.json(error.message)
+        //res.json(error.message)
+        //next(error.message)
+        next(new Error(error.message));
     }
 }
 
